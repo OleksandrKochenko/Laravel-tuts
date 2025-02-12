@@ -19,8 +19,10 @@ Route::get('/tut/ninjas', function () {
     return view('tuts.ninjas.ninjas', ['greeting' => 'hello', 'ninjas'=> $ninjas]);
 });
 
-Route::get('/tut/ninjas/{id}', function ($id) {
-    $newId = $id . '0';
+Route::get('/tut/ninjas/create', function () {
+    return view('tuts.ninjas.create');
+});
 
-    return view('tuts.ninjas.show', ['id' => $newId]);
+Route::get('/tut/ninjas/{id}', function ($id) {
+    return view('tuts.ninjas.show', ['id' => $id]);
 });
